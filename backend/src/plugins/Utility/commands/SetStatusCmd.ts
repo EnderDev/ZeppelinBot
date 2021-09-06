@@ -14,7 +14,7 @@ export const SetStatusCmd = utilityCmd({
   },
 
   async run({ message, pluginData, args }) {
-    const status = args.status || "online";
+    const status: any = args.status || "online";
 
     pluginData.client.user.setPresence({ activities: [{ 
       name: args.activity
