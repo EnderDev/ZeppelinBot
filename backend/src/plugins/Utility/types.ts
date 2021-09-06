@@ -31,6 +31,7 @@ export const ConfigSchema = t.type({
   can_about: t.boolean,
   can_context: t.boolean,
   can_jumbo: t.boolean,
+  can_status: t.boolean,
   jumbo_size: t.Integer,
   can_avatar: t.boolean,
   info_on_single_result: t.boolean,
