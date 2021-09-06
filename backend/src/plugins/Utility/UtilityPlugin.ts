@@ -43,6 +43,7 @@ import { activeReloads } from "./guildReloads";
 import { refreshMembersIfNeeded } from "./refreshMembers";
 import { ConfigSchema, UtilityPluginType } from "./types";
 import { LogsPlugin } from "../Logs/LogsPlugin";
+import { SetStatusCmd } from "./commands/SetStatusCmd";
 
 const defaultOptions: PluginOptions<UtilityPluginType> = {
   config: {
@@ -69,6 +70,7 @@ const defaultOptions: PluginOptions<UtilityPluginType> = {
     can_about: false,
     can_context: false,
     can_jumbo: false,
+    can_status: false,
     jumbo_size: 128,
     can_avatar: false,
     info_on_single_result: true,
@@ -152,6 +154,7 @@ export const UtilityPlugin = zeppelinGuildPlugin<UtilityPluginType>()({
     SnowflakeInfoCmd,
     RoleInfoCmd,
     EmojiInfoCmd,
+    SetStatusCmd,
   ],
 
   // prettier-ignore
