@@ -16,7 +16,7 @@ export const SetStatusCmd = utilityCmd({
   async run({ message, pluginData, args }) {
     const status = args.status || "online";
 
-    message.client.user.setPresence({ activities: [{ 
+    pluginData.client.user.setPresence({ activities: [{ 
       name: args.activity
     }], status });
 
@@ -30,7 +30,7 @@ export const SetStatusCmd = utilityCmd({
     sendSuccessMessage(
       pluginData, 
       message.channel, 
-      `Set ${message.client.user.username}'s status to **${emojis[status]} ${args.activity}**`
+      `Set ${pluginData.client.user.username}'s status to **${emojis[status]} ${args.activity}**`
     );
   },
 });
