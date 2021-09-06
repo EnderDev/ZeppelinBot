@@ -22,11 +22,15 @@ export const SetStatusCmd = utilityCmd({
       type !== "playing" ||
       type !== "watching" ||
       type !== "listening" 
-    ) return sendErrorMessage(
-      pluginData,
-      message.channel,
-      `\`--type\` must be **playing**, **watching** or **listening**`
-    )
+    ) {
+      sendErrorMessage(
+        pluginData,
+        message.channel,
+        `\`--type\` must be **playing**, **watching** or **listening**`
+      )
+
+      return;
+    }
 
     pluginData.client.user!.setPresence({ activities: [{ 
       name: args.activity,
