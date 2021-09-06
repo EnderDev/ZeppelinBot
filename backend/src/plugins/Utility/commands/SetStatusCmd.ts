@@ -1,6 +1,7 @@
 import { utilityCmd } from "../types";
 import { commandTypeHelpers as ct } from "../../../commandTypes";
 import { sendErrorMessage, sendSuccessMessage } from "src/pluginUtils";
+import { log } from "src/plugins/Logs/util/log";
 
 export const SetStatusCmd = utilityCmd({
   trigger: ["status", "setstatus", "set-status"],
@@ -17,6 +18,8 @@ export const SetStatusCmd = utilityCmd({
   async run({ message, pluginData, args }) {
     const status: any = args.status || "online";
     const type: any = args.type || "playing";
+
+    console.log(args, type, status);
 
     if(
       args.type &&
