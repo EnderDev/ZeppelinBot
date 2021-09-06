@@ -19,6 +19,7 @@ export const SetStatusCmd = utilityCmd({
     const type: any = args.type || "playing";
 
     if(
+      args.type &&
       type !== "playing" ||
       type !== "watching" ||
       type !== "listening" 
